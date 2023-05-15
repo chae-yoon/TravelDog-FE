@@ -5,6 +5,7 @@ import { Layout } from 'antd';
 import NavbarComponent from './components/views/NavbarComponent/NavbarComponent';
 import IndexPage from './components/views/IndexPage/IndexPage';
 import LoginPage from './components/views/LoginPage/LoginPage';
+import SignupPage from './components/views/SignupPage/SignupPage';
 
 const { Header, Content, Footer } = Layout;
 
@@ -35,6 +36,7 @@ function App() {
           <Routes>
             <Route path='/' element={<IndexPage/>} />
             <Route path='/login' element={<LoginPage/>} />
+            <Route path='/signup' element={<SignupPage/>} />
           </Routes>
         </div>
       </Content>
