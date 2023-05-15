@@ -38,7 +38,7 @@ function NavbarComponent() {
           </Row>
           <Space>
             <Button type="text" style={{color: 'rgba(0, 0, 0, 0.88)'}} href='/login'>로그인</Button>
-            <Button type="primary" href='/'>회원가입</Button>
+            <Button type="primary" href='/signup'>회원가입</Button>
           </Space>
         </Row>
         </div>

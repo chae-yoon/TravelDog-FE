@@ -86,7 +86,7 @@ function LoginPage() {
             </Form.Item>
             <Space>
               <Text type="secondary">아직 계정이 없으신가요?</Text>
-              <Link fontWeightStrong href=''>회원가입하기</Link>
+              <Link href='/signup'>회원가입하기</Link>
             </Space>
           </Form>
         </ConfigProvider>
