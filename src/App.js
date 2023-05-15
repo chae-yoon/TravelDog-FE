@@ -29,7 +29,7 @@ function App() {
         <div
           style={{
             padding: 24,
-            minHeight: 380,
+            minHeight: 540,
           }}
         >
           <Routes>
