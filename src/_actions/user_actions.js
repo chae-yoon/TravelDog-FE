@@ -18,11 +18,11 @@ export function registerUser (data) {
   }
 }
 
-// export function authUser() {
-//   const request = axios.get('/api/users/auth')
-//     .then(response =>  response.data )
-//   return {
-//     type: 'AUTH_USER',
-//     payload: request,
-//   }
-// }
+export function authUser() {
+  const request = axios.get('/api/accounts/')
+    .then(response =>  response.data ).catch(err => err.response.data)
+  return {
+    type: 'AUTH_USER',
+    payload: request,
+  }
+}

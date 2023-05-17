@@ -2,10 +2,11 @@ import 'antd/dist/reset.css';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from 'antd';
-import NavbarComponent from './components/views/NavbarComponent/NavbarComponent';
 import IndexPage from './components/views/IndexPage/IndexPage';
 import LoginPage from './components/views/LoginPage/LoginPage';
 import SignupPage from './components/views/SignupPage/SignupPage';
+import Auth from './hoc/auth'
+import NavbarComponent from './components/views/NavbarComponent/NavbarComponent';
 
 const { Header, Content, Footer } = Layout;
 
@@ -34,9 +35,9 @@ function App() {
           }}
         >
           <Routes>
-            <Route path='/' element={<IndexPage/>} />
-            <Route path='/login' element={<LoginPage/>} />
-            <Route path='/signup' element={<SignupPage/>} />
+            <Route path='/' element={Auth(IndexPage, null)} />
+            <Route path='/login' element={Auth(LoginPage, false)} />
+            <Route path='/signup' element={Auth(SignupPage, false)} />
           </Routes>
         </div>
       </Content>
