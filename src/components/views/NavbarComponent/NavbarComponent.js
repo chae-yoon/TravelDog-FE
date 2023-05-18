@@ -4,7 +4,7 @@ import LogoIMG from '../../../images/LOGO.png'
 import { useNavigate } from 'react-router-dom'
 import { authUser } from "../../../_actions/user_actions"; 
 import { useDispatch } from "react-redux"; 
-import { Button, Space, ConfigProvider, Row, Image, Col, Dropdown, Avatar, Menu } from 'antd';
+import { Button, Space, ConfigProvider, Row, Image, Col, Dropdown, Avatar } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 import axios from 'axios';
 
@@ -70,7 +70,7 @@ function NavbarComponent() {
       >
         <div>
         <Row justify="space-between">
-          <Row align="top" gutter={[4, 0]} onClick={onClickLogoHandler}>
+          <Row align="top" gutter={[4, 0]} onClick={onClickLogoHandler} style={{ cursor: 'pointer' }}>
             <Col>
               <Image alt='favicon' src={FaviconIMG} preview={false} height={24} />
             </Col>
