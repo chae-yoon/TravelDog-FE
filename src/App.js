@@ -7,6 +7,7 @@ import LoginPage from './components/views/LoginPage/LoginPage';
 import SignupPage from './components/views/SignupPage/SignupPage';
 import Auth from './hoc/auth'
 import NavbarComponent from './components/views/NavbarComponent/NavbarComponent';
+import PlaceDetailPage from './components/views/PlaceDetailPage/PlaceDetailPage';
 
 const { Header, Content, Footer } = Layout;
 
@@ -38,6 +39,7 @@ function App() {
             <Route path='/' element={Auth(IndexPage, null)} />
             <Route path='/login' element={Auth(LoginPage, false)} />
             <Route path='/signup' element={Auth(SignupPage, false)} />
+            <Route path='/places/:placeId' element={Auth(PlaceDetailPage, null)} />
           </Routes>
         </div>
       </Content>
