@@ -11,6 +11,7 @@ import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
 import DefaultPlaceIMG from '../../../images/default_placeIMG.jpg'
 import AverageStarComponent from '../AverageStarComponent/AverageStarComponent'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 const { Title, Paragraph, Text } = Typography
 
@@ -19,6 +20,7 @@ function IndexPage() {
   const [page, setPage] = useState(1);
   const [totalCount, setTotalCount] = useState(0);
   const pageSize = 12
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchCards = async () => {
@@ -32,6 +34,10 @@ function IndexPage() {
 
   const handlePageChange = (newPage) => {
     setPage(newPage);
+  }
+
+  const handlePlaceDetail = (place_pk) => {
+    navigate(`/places/${place_pk}`)
   }
   
   return (
@@ -48,6 +54,7 @@ function IndexPage() {
             <Card
               hoverable
               cover={<Image alt="place_img" src={card.imageList[0].image} preview={false} />}
+              onClick={() => handlePlaceDetail(card.pk)}
             >
               <Title level={4} ellipsis={true}>{card.title}</Title>
               <Row wrap={false} gutter={8} style={{marginTop: '.75rem'}}>
