@@ -9,11 +9,12 @@ export default function AuthenticationCheck(SpecificComponent, option, adminRout
 
   useEffect(() => {
     dispatch(authUser()).then(response => {
-      if (response.payload.isAuth) {
+      if (option && response.payload.isAuth) {
         navigate('/')
       }
+      
     });
-  }, [dispatch, navigate]);
-
+  }, [dispatch, navigate, option]);
   return <SpecificComponent />;
+
 }
